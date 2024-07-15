@@ -12,11 +12,14 @@ my_level = "beginner"  # beginner or pro
 # All students should try first to solve the problem at this level.
 # ===============================================================
 def calculate_fastest_time(time_list):
-    """Loops through time_list and returns fastest time"""
+    assert len(time_list) > 0;
     fastest_time = time_list[0]
+    n_loop = 0
     for time in time_list:
+        assert time>= 0
         if time > fastest_time:
             fastest_time = time
+    assert n_loop == len(time_list)
     return fastest_time
 
 
