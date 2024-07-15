@@ -12,18 +12,31 @@ my_level = "beginner"  # beginner or pro
 # All students should try first to solve the problem at this level.
 # ===============================================================
 def calculate_fastest_time(time_list):
-    """Loop over list of times and find the fastest
+    """Loop over list of times and find the longest
 
     time_list: list of times
     """
+
+    assert len(time_list) > 0, "no times have been passed"
     fastest_time = time_list[0]
+
+    n_loop = 0
+
     for time in time_list:
-        if time > fastest_time:
+        assert time>= 0, "negative times don't make sense"
+        if time < fastest_time:
             fastest_time = time
+        n_loop += 1
+    assert n_loop == len(time_list), "not all items in the loop have been tested"
+
     return fastest_time
 
 
 def print_fastest_time(time_list):
+    """Loop over list of times and print the longest
+
+    time_list: list of times
+    """
     fastest_time = time_list[0]
     for time in time_list:
         if time > fastest_time:
@@ -39,6 +52,7 @@ def print_fastest_time(time_list):
 def time_range(
     start_time, end_time, number_of_intervals=1, gap_between_intervals_s=0
 ):
+
     start_time_s = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
     end_time_s = datetime.datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
     d = (
