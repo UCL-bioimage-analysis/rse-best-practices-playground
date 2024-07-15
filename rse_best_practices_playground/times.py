@@ -5,14 +5,12 @@ import datetime
 # Change this variable to "pro" if you want to try the pro level.
 # ===============================================================
 my_level = "beginner"  # beginner or pro
-
-
 # ===============================================================
 # Beginner level
 # All students should try first to solve the problem at this level.
 # ===============================================================
 def calculate_fastest_time(time_list):
-    '''what this function does? practicing PR'''
+    '''what this function does? practicing PR??'''
     fastest_time = time_list[0]
     for time in time_list:
         if time > fastest_time:
